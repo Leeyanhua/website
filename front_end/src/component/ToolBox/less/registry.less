@@ -1,0 +1,65 @@
+@import './custom.less';
+
+@content1: content1;
+
+.@{content1} {
+  &-wrapper {
+    background-image: url(./BackImg/home-img2.png);
+    height: 300px;
+    text-align: center;
+     button {
+      position: relative;
+      top: 40%;
+      height: 45px;
+      width: 150px;
+      border: none;
+      border-radius: 5px;
+      background-color: #3ac1bd;
+      color: #fff;
+      font-size: 17px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .@{content1}-wrapper {
+    height: 400px;
+    .@{content1} {
+      overflow: hidden;
+      width: 90%;
+      margin: auto;
+      &-img, &-text {
+        width: 100%;
+        display: block;
+        position: relative;
+        text-align: center;
+      }
+      &-img {
+        margin: 20px auto;
+        height: 200px;
+        span {
+          right: 0;
+          left: 0;
+          margin: auto;
+          width: 180px;
+          height: 200px;
+          line-height: 200px;
+        }
+      }
+      &-text {
+        height: 140px;
+        margin-top: 20px;
+        p, h1 {
+          width: 100%;
+          top: auto;
+        }
+        p {
+          margin-top: 20px;
+        }
+        h1 {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}

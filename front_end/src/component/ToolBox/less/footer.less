@@ -1,0 +1,25 @@
+@footer: footer0;
+.@{footer} {
+  color: #333333;
+  background: #ffffff;
+  >div {
+    padding: 0px 60px;
+    line-height: 7vh;
+    > span {
+      padding: 0 1%;
+      float: left;
+    }
+    > .Copyright {
+      float: right;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .@{footer} {
+    > div {
+      width: 90%;
+      margin: auto;
+    }
+  }
+}

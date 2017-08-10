@@ -1,0 +1,37 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/back_end/node_modules
+/front_end/node_modules
+/synchronous_data/node_modules
+/management/node_modules
+
+# testing
+/coverage
+
+# production
+front_end/build/
+
+# misc
+.DS_Store
+.env
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+
+# logs
+/back_end/logs
+/back_end/public/files
+/back_end/public/snapshot
+/back_end/public/error-shot
+
+# model
+/chatbot/model/*
+
+# pyc
+/chatbot/*.pyc
+
+# tmp
+/chatbot/tmp/*

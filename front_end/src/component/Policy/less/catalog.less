@@ -1,0 +1,90 @@
+@cat: catalog;
+.@{cat} {
+  min-height: 80vh;
+  overflow: hidden;
+  margin: 20px auto 50px;
+  .input {
+    position: relative;
+    left: 35%;
+    margin-top: 55px;
+    margin-bottom: 10vh;
+    > input {
+      position: relative;
+      top: 0;
+      height: 40px;
+      vertical-align: text-bottom;
+      font-size: 15px;
+    }
+    >input[type='text'] {
+      width: 366px;
+    }
+    p {
+      font-size: 9px;
+    }
+  }
+  .main {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    .no-result {
+      color: #3ac1bd;
+      margin: 100px 300px 0;
+    }
+  }
+  .optional {
+    margin-right: 50px;
+    .optionalLink {
+      margin-bottom: 15px;
+      display: flex;
+      justify-content: space-between;
+      >span a {
+        margin-right: 16px;
+        font-size: 12px;
+        color: black;
+      }
+    }
+    .ant-card-body {
+      display: flex;
+      .catalog-img {
+        margin-right: 30px;
+      }
+      .catalog-policy {
+        height: 166px;
+        width: 700px;
+        .list-title {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 20px;
+          span {
+            font-size: 10px;
+          }
+        }
+        button {
+          background-color: #ffffff;
+          border: 1px solid #3ac1bd;
+          color: #3ac1bd;
+          font-size: 10px;
+          margin: 0 9px;
+          padding: 0 5px;
+        }
+      }
+    }
+  }
+  .sidebar {
+    width: 260px;
+    .tags button {
+      background: #fff;
+      color: #000;
+      border: 0;
+      margin:8px;
+      cursor: pointer;
+    }
+    .tags button:hover {
+      color: #3ac1bd;
+    }
+    p {
+      font-size: 12px;
+      color: #3ac1bd;
+    }
+  }
+}

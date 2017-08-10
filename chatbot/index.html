@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>聊天机器人测试</title>
+    <style>
+        body{
+            background: #f1f1f1;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: '微软雅黑';
+        }
+        #container {
+            width: 780px;
+            height: 780px;
+            background: white;
+            margin: 80px auto 0;
+            position: relative;
+            box-shadow: 20px 20px 55px #777;
+        }
+        .header {
+            background: green;
+            height: 30px;
+            color: #fff;
+            line-height: 30px;
+            font-size: 20px;
+            padding: 0 10px;
+        }
+        .footer {
+            width: 760px;
+            height: 50px;
+            background: #f1f1f1;
+            position: absolute;
+            bottom: 0;
+            padding: 10px;
+        }
+        .footer input {
+            width: 640px;
+            height: 45px;
+            outline: none;
+            font-size: 20px;
+            text-indent: 10px;
+            position: absolute;
+            border-radius: 6px;
+            right: 120px;
+        }
+        .footer input#send_btn{
+            display: inline-block;
+            width: 100px;
+            height: 48px;
+            background: #33CC33;
+            font-weight: 900;
+            line-height: 45px;
+            cursor: pointer;
+            text-align: center;
+            position: absolute;
+            right: 10px;
+            border-radius: 6px;
+        }
+        .footer input#send_btn:hover {
+            color: #fff;
+            background: green;
+        }
+
+        .content {
+            font-size: 20px;
+            width: 770px;
+            height: 662px;
+            overflow: auto;
+            padding: 5px;
+        }
+        .content li {
+            margin-top: 10px;
+            padding-left: 10px;
+            width: 750px;
+            display: block;
+            clear: both;
+            overflow: hidden;
+        }
+
+        .content li span{
+            background: #7cfc00;
+            padding: 10px;
+            border-radius: 10px;
+            float: left;
+            margin: 6px 10px 0 10px;
+            max-width: 310px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 3px #ccc;
+        }
+
+        .content li span.spanleft {
+            float: left;
+            background: white;
+        }
+        .content li span.spanright {
+            float: right;
+            background: white;
+        }
+
+    </style>
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.bootcss.com/socket.io/1.5.1/socket.io.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+
+        var send_btn = document.getElementById('send_btn');
+        var input_msg = document.getElementById('input_msg');
+        var content = document.getElementsByTagName('ul')[0];
+
+        var span = document.getElementById('btn')
+
+        var socket = io.connect('http://127.0.0.1:8888');
+
+        var show_data = ""
+        socket.on('server_response', function(msg) {
+            console.log(msg);
+            if (msg.data[0]["details"]){
+                show_data = msg.data[0]["details"]
+            }
+            else {
+                show_data = msg.data
+            }
+
+            content.innerHTML += '<li><span class="spanleft">'+ show_data +'</span></li>';
+        });
+
+        $('form#emit').submit(function(event) {
+            content.innerHTML += '<li><span class="spanright">'+$('#input_msg').val()+'</span></li>';
+
+            socket.emit('client_event', {data: $('#input_msg').val(), user_id: '1234567890'});
+
+            console.log($('#input_msg').val())
+            input_msg.value = '';
+            content.scrollTop = content.scrollHeight;
+            return false;
+            });
+    });
+
+    </script>
+</head>
+<body>
+    <div id="container">
+        <div class="header">
+            <span style="float: left;">和小创机器人对话中...</span>
+        </div>
+        <ul class="content">
+        </ul>
+        <div class="footer">
+            <form id="emit" method="POST" action='#'>
+                <input id="input_msg" type="text" placeholder="说点什么吧...">
+                <input id="send_btn" type="submit" value="发  送">
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+.panorama {
+  background: black;
+  background-size:  100% auto;
+  position: relative;
+  #panorama {
+    > div {
+      width: 100% !important;
+      height: 85vh !important;
+    }
+  }
+  .row {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    overflow: auto;
+    .card {
+      width: 500px;
+      float: right;
+      min-height: 500px;
+      height: 80vh;
+      .name {
+        font-size: 20px;
+        color: #333333;
+      }
+      .info {
+        float: right;
+        .in {
+          margin-right: 10px;
+        }
+      }
+      .bread {
+        margin-top: 30px;
+        height: 30px;
+        .b1 {
+          float: left;
+          margin-right: 40px;
+          margin-left: 4px;
+          font-size: 15px;
+          color: #3ac1bd;
+        }
+        .b {
+          float: left;
+          font-size: 15px;
+          margin-left: 4px;
+          color: #3ac1bd;
+        }
+        .icon1 {
+          float: left;
+          margin-top: -3px;
+        }
+        .icon2 {
+          float: left;
+        }
+      }
+      .txt {
+        margin-top: 51px;
+        margin-bottom: 40px;
+        clear:both;
+        .boo {
+          font-size: 15px;
+          color: #9b9b9b;
+        }
+        .data {
+          font-size: 15px;
+          color: #555555;
+        }
+        .area_data {
+          color: #333333;
+          font-size: 15px;
+          margin-left: 10px;
+          font-weight: bold;
+        }
+      }
+      .map .iconfont {
+        font-size: 30px;
+        color: red;
+      }
+      .ant-collapse-borderless > .ant-collapse-item-active {
+        margin-bottom: 0px !important;
+      }
+    }
+  }
+}

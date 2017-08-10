@@ -1,0 +1,106 @@
+.user-center {
+  width: 1100px;
+  min-height: 85vh;
+  margin: 10px auto 0;
+  padding-top: 50px;
+  display: flex;
+  .user-side {
+    width: 250px;
+    height: 400px;
+    margin-right: 50px;
+    .user-img {
+      text-align: center;
+      margin-bottom: 30px;
+      .user-icon {
+        position: relative;
+        margin: 0 auto 20px;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background: #f2f2f2;
+        img, .uploader-trigger {
+          margin-top: 25px;
+          height: 100px;
+          width: 100px;
+        }
+        .uploader-trigger {
+          display: none;
+          font-size: 40px;
+          color: #999;
+          background: rgba(230, 230, 230, 0.9);
+        }
+      }
+      .user-icon:hover {
+        .uploader-trigger {
+          display: table-cell;
+          position: absolute;
+          top: 0;
+          cursor: pointer;
+          i {
+            line-height: 2.5;
+          }
+        }
+      }
+    }
+    .ant-menu-item, {
+      display: flex;
+      justify-content: space-around;
+    }
+    .ant-menu {
+      border: 0;
+    }
+  }
+  .ant-tabs {
+    width: 750px;
+    .favor-space {
+      display: flex;
+      flex-wrap: wrap;
+      .favor-space-item .ant-card-body {
+        padding: 15px;
+      }
+      .favor-tip {
+        display: inline-block;
+        width: 200px;
+      }
+    }
+    .user-policy-card {
+      .user-policy {
+        background: url("/BackImg/policy.png") no-repeat;
+        padding-left: 300px;
+  	    width: 720px;
+        height: 170px;
+        button {
+          background-color: #ffffff;
+          border: 1px solid #3ac1bd;
+          color: #3ac1bd;
+          font-size: 10px;
+          margin: 0 9px;
+          padding: 0 5px;
+        }
+      }
+    }
+  }
+  .user-right-card {
+    min-height: 90%;
+  }
+  .user-inf .ant-tabs-content {
+    margin-left: 50px;
+    margin-top: 40px;
+    .ant-form-item-label {
+      text-align: left;
+    }
+    .save-button {
+      margin-left: 200px;
+    }
+  }
+  .user-service {
+    width: 800px;
+    .ant-row {
+      display: flex;
+      padding: 20px 0 0 40px;
+      .ant-col-6 {
+        color: rgb(237,191,71);
+      }
+    }
+  }
+}

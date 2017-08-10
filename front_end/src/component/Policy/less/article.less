@@ -1,0 +1,97 @@
+.article {
+  margin: 40px auto 70px;
+  min-width: 1200px;
+  width: 60vw;
+  .header {
+    display: flex;
+    justify-content: space-between;
+    .title {
+      margin: 0 0vw 40px;
+      > h1 {
+        font-size: 23px;
+        margin-bottom: 25px;
+      }
+      > span {
+        display: inline-block;
+      }
+      > span,button {
+        font-size: 10px;
+        margin-right: 14px;
+        margin-bottom: 12px;
+      }
+      > button {
+        background-color: #ffffff;
+        border: 1px solid #3ac1bd;
+        color: #3ac1bd;
+        padding: 0 5px;
+      }
+    }
+    .note {
+      margin-top: 50px;
+      font-size: 20px;
+      >span {
+        margin-bottom: 24px;
+      }
+    }
+  }
+  .article-img {
+    padding-left: 100px;
+  }
+   .content {
+    white-space: pre-line;
+    margin-bottom: 50px;
+    font-size: 15px;
+  }
+  .arrow {
+    margin: 10px auto 0;
+    display: block;
+  }
+  .apply {
+    text-align: center;
+    width: 170px;
+    background-color: #3ac1bd;
+    color: #ffffff;
+    display: block;
+    margin: 3px auto 60px;
+    padding: 5px 0;
+  }
+  .share {
+    margin-bottom: 90px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    span {
+      color: #777777;
+    }
+    >a {
+      margin: 0 10px;
+    }
+  }
+  .subtitle {
+    color: #3ac1bd;
+    margin-bottom: 5px;
+    margin-top: 30px;
+  }
+  .tags {
+    a {
+      display: inline-block;
+      width: 120px;
+      color: #000;
+      margin: 7px 2px;
+    }
+    // a:visited { color: #3ac1bd; }	/* 已被访问的链接 */
+    // a:hover { color: #3ac1bd; }	/* 鼠标指针移动到链接上 */
+    // a:active { color: #3ac1bd; }
+  }
+  .recommend {
+    display: flex;
+    flex-direction: row;
+    >div {
+      margin: 20px;
+      >img {
+        width: 200px;
+      }
+    }
+  }
+}
